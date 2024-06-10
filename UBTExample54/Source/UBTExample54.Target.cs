@@ -22,5 +22,36 @@ public class UBTExample54Target : TargetRules
 		ExtraModuleNames.Add("UBTExample54");
 
 		Logger.LogInformation(string.Format("UBTExample: target setting value is set - {0}", bTargetSetting));
+
+		System.Reflection.Assembly buildAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+		System.Type ubtExamplePluginExampleModuleType = null;
+
+		try
+		{
+			ubtExamplePluginExampleModuleType = buildAssembly.GetType("UBTExamplePluginExampleModule");
+		}
+		catch
+		{
+			Logger.LogInformation("UBTExample: could not get UBTExamplePluginExampleModule type information");
+		}
+
+		if (ubtExamplePluginExampleModuleType != null)
+		{
+			System.Reflection.MethodInfo getExampleDataMethodInfo = ubtExamplePluginExampleModuleType.GetMethod("GetExampleData", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+
+			if (getExampleDataMethodInfo != null)
+			{
+				object result = getExampleDataMethodInfo.Invoke(null, null);
+
+				if (result != null && result is string)
+				{
+					Logger.LogInformation(string.Format("UBTExample: target command line data value - [{0}]", (string)result));
+				}
+				else
+				{
+					Logger.LogInformation("UBTExample: target could not access command line data value");
+				}
+			}
+		}
 	}
 }

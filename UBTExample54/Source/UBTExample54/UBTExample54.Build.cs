@@ -25,5 +25,7 @@ public class UBTExample54 : ModuleRules
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
 		Logger.LogInformation(string.Format("UBTExample: module setting value is set - {0}", bModuleSetting));
+
+		Logger.LogInformation(string.Format("UBTExample: project command line data value - [{0}]", UBTExamplePluginExampleModule.GetExampleData()));
 	}
 }

@@ -20,5 +20,7 @@ public class UBTExample427 : ModuleRules
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
 		Log.TraceInformation(string.Format("UBTExample: module setting value is set - {0}", bModuleSetting));
+
+		Log.TraceInformation(string.Format("UBTExample: project command line data value - [{0}]", UBTExamplePluginExampleModule.GetExampleData()));
 	}
 }

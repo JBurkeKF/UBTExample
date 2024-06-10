@@ -25,5 +25,7 @@ public class UBTExamplePlugin : ModuleRules
 		PrivateDependencyModuleNames.AddRange(new string[] { "CoreUObject", "Engine", "Slate", "SlateCore" });
 
 		Logger.LogInformation(string.Format("UBTExamplePlugin: plugin setting value is set - {0}", bPluginSetting));
+
+		Logger.LogInformation(string.Format("UBTExamplePlugin: base plugin command line data value - [{0}]", UBTExamplePluginExampleModule.GetExampleData()));
 	}
 }
