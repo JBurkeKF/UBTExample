@@ -1,4 +1,6 @@
-Unreal Build Tool (UBT) Example
+## Unreal Build Tool (UBT) Example
+
+[Unreal Build Tool Command Line Arguments](http://www.kittehface.com/2024/06/unreal-build-tool-command-line-arguments.html)
 
 We've been exploring some of the ways we can use command line parameters to allow different types of builds on the same platform in Unreal.  If you're building from the command line or using the Project Launcher, you can specify extra build arguments with the `-ubtargs` switch.  There's a very good explanation of how to set things up here:
 
